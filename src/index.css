@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #004a99;
+  --color-secondary: #00a0e9;
+  --color-accent: #f27d26;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-slate-900 bg-white;
+  }
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold text-center mb-12 relative pb-4;
+}
+
+.section-title::after {
+  content: '';
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-primary;
+}
